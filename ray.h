@@ -5,4 +5,5 @@
 struct ray{
 	Vector3d position;
 	Vector3d direction;
-}
+};
+#endif
