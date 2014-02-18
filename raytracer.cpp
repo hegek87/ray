@@ -24,6 +24,5 @@ int main(void){
 		}
 	}
 	bmp.createBMP((char *)"RT.bmp");
-	std::cout << "IT WORKS" << std::endl;
 	return 0;
 }
