@@ -1,7 +1,7 @@
 #include "raytracer.hpp"
 
 const int width(500), height(500);
-Sphere obj(Color(0xFF0000), Vector3d(width/2,height/2, 250), 290);
+Sphere obj(Color(0xFF0000), Vector3d(600,2500,400), 75);
 Color World::traceRay(Ray r){
 	Color c(0x000000);
 	// Missed
