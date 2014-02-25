@@ -5,11 +5,13 @@ Sphere obj(Color(0xFF0000), Vector3d(50,0,0), 75);
 Color World::traceRay(Ray r){
 	Color c(0x000000);
 	// Missed
-	if(!obj.getIntersection(r).time){
+	Intersection res = obj.getIntersection(r);
+	if(!res.time){
 		return c;
 	}
 	// Hit
-	return c+obj.getColor();
+	double distance = res.position.magnitude();
+	return (c+obj.getColor()).scalarMul(1.0/distance)+Color(200);
 	
 }
 
