@@ -1,20 +1,21 @@
 CC = g++
 CFLAGS = -c -g -Wall -o
 OBJECTS = 	bin/shape.o			\
-		bin/sphere.o		\
-		bin/bitmap.o		\
-		bin/color.o			\
-		bin/polynomial.o		\
-		bin/raytracer.o		\
-		bin/vector3d.o
+			bin/sphere.o		\
+			bin/bitmap.o		\
+			bin/color.o			\
+			bin/polynomial.o	\
+			bin/raytracer.o		\
+			bin/vector3d.o		\
+			bin/scene.o
 		
 all: raytracer
 
 raytracer: $(OBJECTS)
 	$(CC) -o bin/raytracer $(OBJECTS)
-
+	
 bin/raytracer.o: raytracer.cpp
-	$(CC) $(CFLAGS) bin/raytracer.o raytracer.cpp
+	$(CC) $(CFLAGS) bin/raytracer.o -I../object/ -I../vector3d/ raytracer.cpp
 	
 bin/shape.o: 	../object/shape.cpp
 	$(CC) $(CFLAGS) bin/shape.o ../object/shape.cpp
@@ -33,3 +34,6 @@ bin/polynomial.o:	../polynomial/polynomial.cpp
 
 bin/vector3d.o: ../vector3d/vector3d.cpp
 	$(CC) $(CFLAGS) bin/vector3d.o ../vector3d/vector3d.cpp
+	
+bin/scene.o: scene.cpp
+	$(CC) $(CFLAGS) bin/scene.o -I../object/ -I../vector3d/ scene.cpp

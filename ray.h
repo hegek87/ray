@@ -1,6 +1,6 @@
 #ifndef RAY_H
 #define RAY_H
-#include "../vector3d/vector3d.h"
+#include "../vector3d/vector3d.hpp"
 
 struct Ray{
 	Vector3d position;

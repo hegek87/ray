@@ -1,11 +1,12 @@
 #include "raytracer.hpp"
 
 const int width(500), height(500);
-Sphere obj(Color(0xFF0000), Vector3d(50,0,0), 75);
+Sphere obj(Color(0xFF0000), Vector3d(50,100,0), 75);
+Scene sc(&obj, NULL);
 Color World::traceRay(Ray r){
 	Color c(0x000000);
 	// Missed
-	Intersection res = obj.getIntersection(r);
+	Intersection res = sc.getSceneObj()->getIntersection(r);
 	if(!res.time){
 		return c;
 	}

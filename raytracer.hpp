@@ -5,12 +5,10 @@
 #include "../object/intersection.hpp"
 #include "../bitmap/bitmap.hpp"
 #include "../color/color.h"
+#include "scene.hpp"
 #include "ray.h"
 
-struct Scene{
-	//Shape sh;
-	//Scene(Shape sh) : sh(sh) {}
-};
+
 
 class World{
 	private:
