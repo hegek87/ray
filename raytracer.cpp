@@ -1,7 +1,7 @@
 #include "raytracer.hpp"
 
 const int width(500), height(500);
-Sphere obj(Color(0xFF0000), Vector3d(50,100,0), 75);
+Sphere obj(Color(0xFF0000), Vector3d(50,100,-100), 75);
 Scene sc(&obj, NULL);
 Color World::traceRay(Ray r){
 	Color c(0x000000);
@@ -11,8 +11,8 @@ Color World::traceRay(Ray r){
 		return c;
 	}
 	// Hit
-	double distance = res.position.magnitude();
-	return (c+obj.getColor()).scalarMul(1.0/distance)+Color(200);
+	//double distance = res.position.magnitude();
+	return (c+obj.getColor());
 	
 }
 
