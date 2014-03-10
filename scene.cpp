@@ -1,6 +1,6 @@
 #include "scene.hpp"
 
 Scene::~Scene(){
-	delete sceneObj;
+	//delete sceneObj;
 	delete lights;
 }

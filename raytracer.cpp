@@ -12,7 +12,7 @@ Color World::traceRay(Ray r){
 	}
 	// Hit
 	//double distance = res.position.magnitude();
-	return (c+obj.getColor());
+	return (c+sc.getSceneObj()->getColor());
 	
 }
 
@@ -23,7 +23,8 @@ int main(void){
 	for(int i = -(width/2); i < width/2; ++i){
 		for(int j = -(height/2); j < height/2; ++j){
 			Vector3d dir(-cam.getX(), i-cam.getY(), j-cam.getZ());
-			bmp.setPixel(i+(width/2),j+(height/2), w.traceRay(Ray(cam, dir.unitVec())));
+			bmp.setPixel(
+				i+(width/2),j+(height/2),w.traceRay(Ray(cam,dir.unitVec())));
 		}
 	}
 	bmp.createBMP((char *)"RT.bmp");
